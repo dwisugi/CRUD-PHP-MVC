@@ -16,7 +16,7 @@
         
         <ul class="list-group">
             <?php foreach ($data['mhs'] as $mhs) : ?>
-                <li class="list-group-item">
+                <li class="list-group-item text-capitalize">
                     <?= $mhs['nama']; ?>
                     <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id'];?>" class="badge badge-danger float-right ml-1" onclick="return confirm('Yakin?');">Hapus</a>
                     <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'];?>" class="badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-id="<?= $mhs['id']; ?>" data-target="#formModal">Ubah</a>

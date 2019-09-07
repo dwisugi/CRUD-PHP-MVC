@@ -25,7 +25,7 @@ class Mahasiswa_model{
 
     public function tambahDataMahasiswa($data)
     {
-        $query = "INSERT INTO mahasiswa
+        $query = "INSERT INTO ".$this->table."
                         VALUES
                     (null, :nama, :nrp, :email, :jurusan)";
 
@@ -42,7 +42,7 @@ class Mahasiswa_model{
 
     public function hapusDataMahasiswa($id)
     {
-        $query = "DELETE FROM mahasiswa WHERE id=:id";
+        $query = "DELETE FROM ".$this->table." WHERE id=:id";
         $this->db->query($query);
         $this->db->bind('id',$id);
 
@@ -53,7 +53,7 @@ class Mahasiswa_model{
 
     public function ubahDataMahasiswa($data)
     {
-        $query = "UPDATE mahasiswa SET 
+        $query = "UPDATE ".$this->table." SET 
             nama = :nama,
             nrp = :nrp,
             email = :email,
